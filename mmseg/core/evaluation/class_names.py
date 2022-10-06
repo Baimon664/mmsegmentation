@@ -11,6 +11,11 @@ def cityscapes_classes():
         'bicycle'
     ]
 
+def bangkokscapes_classes():
+    """Bangkokscapes class names for external use."""
+    return ['Road','Misc','Building','Tree','Car','Footpath','Motorcycle','Pole',
+            'Person','Trash','Crosswalk']
+
 
 def ade_classes():
     """ADE20K class names for external use."""
@@ -133,6 +138,12 @@ def cityscapes_palette():
             [107, 142, 35], [152, 251, 152], [70, 130, 180], [220, 20, 60],
             [255, 0, 0], [0, 0, 142], [0, 0, 70], [0, 60, 100], [0, 80, 100],
             [0, 0, 230], [119, 11, 32]]
+
+def bangkokscapes_palette():
+    """Bangkokscapes palette for external use."""
+    return [[128, 128, 0],[0, 0, 0],[128, 128, 128],[64, 0, 0],
+            [128, 0, 0],[0, 0, 128],[0, 128, 0],[0, 128, 128],
+            [64, 128, 0],[192, 0, 0],[128, 0, 128]]
 
 
 def ade_palette():
@@ -267,6 +278,7 @@ def stare_palette():
 
 dataset_aliases = {
     'cityscapes': ['cityscapes'],
+    'bangkokscapes': ['bangkokscapes'],
     'ade': ['ade', 'ade20k'],
     'voc': ['voc', 'pascal_voc', 'voc12', 'voc12aug'],
     'loveda': ['loveda'],

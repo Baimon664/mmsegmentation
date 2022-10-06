@@ -65,7 +65,7 @@ The master branch works with **PyTorch 1.5+**.
 
 - **Support of multiple methods out of box**
 
-  The toolbox directly supports popular and contemporary semantic segmentation frameworks, *e.g.* PSPNet, DeepLabV3, PSANet, DeepLabV3+, etc.
+  The toolbox directly supports popular and contemporary semantic segmentation frameworks, _e.g._ PSPNet, DeepLabV3, PSANet, DeepLabV3+, etc.
 
 - **High efficiency**
 
@@ -111,6 +111,8 @@ There are also tutorials for:
 - [useful tools](docs/en/useful_tools.md)
 
 A Colab tutorial is also provided. You may preview the notebook [here](demo/MMSegmentation_Tutorial.ipynb) or directly [run](https://colab.research.google.com/github/open-mmlab/mmsegmentation/blob/master/demo/MMSegmentation_Tutorial.ipynb) on Colab.
+
+##BangkokScape Dataset HRnet+OCR [here](demo/BangkokScape_Tutorial.ipynb)
 
 ## Benchmark and model zoo
 
