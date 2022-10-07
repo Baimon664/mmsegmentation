@@ -9,7 +9,7 @@ checkpoint_file = 'checkpoints/best_mIoU_iter_9600_w_palette.pth'
 
 model = init_segmentor(config_file, checkpoint_file, device='cuda:0')
 
-img = '../previous/dataset/image/13215861405/29.png'
+img = 'bkk-urbanscapes-complete/val/image_0_0193.jpg'
 result = inference_segmentor(model, img)
 
 show_result_pyplot(model, img, result, get_palette('bangkokscapes'))
