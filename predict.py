@@ -10,8 +10,8 @@ checkpoint_file = 'checkpoints/40k_freezed_upper/best_mIoU_iter_37200.pth'
 model = init_segmentor(config_file, checkpoint_file, device='cuda:0')
 
 # img = 'bkk-urbanscapes-complete/test/image_17_0145.jpg'
-img = 'C:/Users/monma/Desktop/QOL-capstone/previous/dataset/image/13222462101/10.png'
-# img = 'demo/52741.png'
+# img = 'C:/Users/monma/Desktop/QOL-capstone/previous/dataset/image/13222462101/10.png'
+img = 'demo/78551.png'
 result = inference_segmentor(model, img)
 
 show_result_pyplot(model, img, result, get_palette('bangkokscapes'),)

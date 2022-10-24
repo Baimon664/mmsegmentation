@@ -70,7 +70,12 @@ model = dict(
             loss_decode=dict(
                 type='CrossEntropyLoss',
                 use_sigmoid=False,
-                loss_weight=1.0))
+                loss_weight=1.0,
+                class_weight=[
+                    0.3676154227026678, 1.0, 1.0, 0.30827188962300506, 1.0,
+                    1.0, 1.0, 0.43679222183046246, 0.5484545911305791, 1.0, 1.0
+                ])
+            )
     ],
     train_cfg=dict(),
     test_cfg=dict(mode='whole'))
