@@ -1,17 +1,17 @@
 from mmseg.apis import inference_segmentor, init_segmentor, show_result_pyplot
 from mmseg.core.evaluation import get_palette
 
-config_file = 'work_dirs/40k/hrnet_weight_config_40k.py'
-checkpoint_file = 'work_dirs/40k/best_mIoU_iter_38200.pth'
+config_file = 'checkpoints/40k_freezed_upper/hrnet_weight_config_40k_freezed_u.py'
+checkpoint_file = 'checkpoints/40k_freezed_upper/best_mIoU_iter_37200.pth'
 
 # config_file = 'configs/ocrnet/ocrnet_hr48_512x1024_160k_cityscapes.py'
 # checkpoint_file = 'checkpoints/ocrnet_hr48_512x1024_160k_cityscapes_20200602_191037-dfbf1b0c.pth'
 
 model = init_segmentor(config_file, checkpoint_file, device='cuda:0')
 
-img = 'bkk-urbanscapes-complete/test/image_17_0145.jpg'
-# img = 'C:/Users/monma/Desktop/QOL-capstone/previous/dataset/image/13216032259/2.png'
-# img = 'demo/test2.jpg'
+# img = 'bkk-urbanscapes-complete/test/image_17_0145.jpg'
+img = 'C:/Users/monma/Desktop/QOL-capstone/previous/dataset/image/13222462101/10.png'
+# img = 'demo/52741.png'
 result = inference_segmentor(model, img)
 
 show_result_pyplot(model, img, result, get_palette('bangkokscapes'),)

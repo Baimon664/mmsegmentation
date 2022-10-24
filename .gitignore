@@ -117,6 +117,8 @@ work_dirs/
 mmseg/.mim
 checkpoints/
 work_dirs/
+*.jpg
+*.png
 
 # Pytorch
 *.pth
