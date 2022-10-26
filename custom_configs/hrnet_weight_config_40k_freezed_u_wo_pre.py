@@ -2,7 +2,7 @@ norm_cfg = dict(type='BN', requires_grad=True)
 model = dict(
     type='CascadeEncoderDecoder',
     num_stages=2,
-    pretrained='open-mmlab://msra/hrnetv2_w48',
+    # pretrained='open-mmlab://msra/hrnetv2_w48',
     backbone=dict(
         type='HRNet',
         norm_cfg=dict(type='BN', requires_grad=True),
@@ -194,7 +194,7 @@ log_config = dict(
     interval=10, hooks=[dict(type='TextLoggerHook', by_epoch=False)])
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-# load_from = 'checkpoints/ocrnet_hr48_512x1024_160k_cityscapes_20200602_191037-dfbf1b0c.pth'
+load_from = 'checkpoints/ocrnet_hr48_512x1024_160k_cityscapes_20200602_191037-dfbf1b0c.pth'
 resume_from = None
 workflow = [('train', 1)]
 cudnn_benchmark = True
