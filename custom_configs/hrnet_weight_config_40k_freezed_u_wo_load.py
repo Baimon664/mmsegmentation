@@ -204,7 +204,7 @@ lr_config = dict(policy='poly', power=0.9, min_lr=0.0001, by_epoch=False)
 runner = dict(type='IterBasedRunner', max_iters=40000)
 checkpoint_config = dict(by_epoch=False, interval=16000)
 evaluation = dict(interval=200, metric='mIoU', pre_eval=True, save_best='mIoU')
-work_dir = './work_dirs/40k_iters_frozen_u'
+work_dir = './work_dirs/40k_iters_frozen_wo_load'
 seed = 0
 gpu_ids = range(0, 1)
 device = 'cuda'
