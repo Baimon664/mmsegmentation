@@ -189,7 +189,7 @@ optimizer_config = dict()
 lr_config = dict(policy='poly', power=1.5, min_lr=0.0001, by_epoch=False)
 runner = dict(type='IterBasedRunner', max_iters=40000)
 checkpoint_config = dict(by_epoch=False, interval=4000)
-evaluation = dict(interval=4000, metric='mIoU', pre_eval=True)
+evaluation = dict(interval=4000, metric='mIoU', pre_eval=True, save_best='mIoU')
 work_dir = './work_dirs/ver3'
 seed = 0
 gpu_ids = range(0, 1)
