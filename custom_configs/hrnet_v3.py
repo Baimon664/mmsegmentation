@@ -79,7 +79,7 @@ model = dict(
 dataset_type = 'BangkokScapeDataset'
 data_root = 'bkk-urbanscapes-complete'
 img_norm_cfg = dict(
-    mean=[93.46288168348168, 104.6110631175713, 111.37319921342814], std=[75.88999215272304, 79.2197870847292, 81.5979322929455], to_rgb=True)
+    mean=[111.37319921342814, 104.6110631175713, 93.46288168348168], std=[81.5979322929455, 79.2197870847292, 75.88999215272304], to_rgb=True)
 crop_size = (256, 256)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
@@ -90,8 +90,8 @@ train_pipeline = [
     dict(type='PhotoMetricDistortion'),
     dict(
         type='Normalize',
-        mean=[93.46288168348168, 104.6110631175713, 111.37319921342814],
-        std=[75.88999215272304, 79.2197870847292, 81.5979322929455],
+        mean=[111.37319921342814, 104.6110631175713, 93.46288168348168],
+        std=[81.5979322929455, 79.2197870847292, 75.88999215272304],
         to_rgb=True),
     dict(type='Pad', size=(256, 256), pad_val=0, seg_pad_val=1),
     dict(type='DefaultFormatBundle'),
@@ -108,8 +108,8 @@ test_pipeline = [
             dict(type='RandomFlip'),
             dict(
                 type='Normalize',
-                mean=[93.46288168348168, 104.6110631175713, 111.37319921342814],
-                std=[75.88999215272304, 79.2197870847292, 81.5979322929455],
+                mean=[111.37319921342814, 104.6110631175713, 93.46288168348168],
+                std=[81.5979322929455, 79.2197870847292, 75.88999215272304],
                 to_rgb=True),
             dict(type='ImageToTensor', keys=['img']),
             dict(type='Collect', keys=['img'])
@@ -132,8 +132,8 @@ data = dict(
             dict(type='PhotoMetricDistortion'),
             dict(
                 type='Normalize',
-                mean=[93.46288168348168, 104.6110631175713, 111.37319921342814],
-                std=[75.88999215272304, 79.2197870847292, 81.5979322929455],
+                mean=[111.37319921342814, 104.6110631175713, 93.46288168348168],
+                std=[81.5979322929455, 79.2197870847292, 75.88999215272304],
                 to_rgb=True),
             dict(type='Pad', size=(256, 256), pad_val=0, seg_pad_val=1),
             dict(type='DefaultFormatBundle'),
@@ -156,8 +156,8 @@ data = dict(
                     dict(type='RandomFlip'),
                     dict(
                         type='Normalize',
-                        mean=[93.46288168348168, 104.6110631175713, 111.37319921342814],
-                        std=[75.88999215272304, 79.2197870847292, 81.5979322929455],
+                        mean=[111.37319921342814, 104.6110631175713, 93.46288168348168],
+                        std=[81.5979322929455, 79.2197870847292, 75.88999215272304],
                         to_rgb=True),
                     dict(type='ImageToTensor', keys=['img']),
                     dict(type='Collect', keys=['img'])
