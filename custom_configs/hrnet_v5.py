@@ -47,13 +47,13 @@ model = dict(
             num_classes=11,
             align_corners=False,
             loss_decode=dict(
-                type='CrossEntropyLoss', 
-                use_sigmoid=False, 
+                type='FocalLoss',
                 loss_weight=0.4,
                 class_weight=[
                 1.0, 1.0127478789489999, 1.134696090502, 1.0, 1.005815812195, 
                 1.484609012679, 1.026460353468, 1.0, 1.0, 1.995087626708, 1.58445358173
-                ])
+                ]
+            )
             ),
         dict(
             type='OCRHead',
@@ -68,7 +68,6 @@ model = dict(
             align_corners=False,
             loss_decode=dict(
                 type='FocalLoss',
-                use_sigmoid=False,
                 loss_weight=1.0,
                 class_weight=[
                 1.0, 1.0127478789489999, 1.134696090502, 1.0, 1.005815812195, 
