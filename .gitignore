@@ -121,6 +121,7 @@ work_dirs/
 *.png
 
 bkk-urbanscapes-complete/train/filenames.txt
+class_weight.txt
 
 # Pytorch
 *.pth
