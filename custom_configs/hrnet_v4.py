@@ -117,7 +117,7 @@ test_pipeline = [
 ]
 data = dict(
     samples_per_gpu=8,
-    workers_per_gpu=1,
+    workers_per_gpu=8,
     train=dict(
         type='BangkokScapeDataset',
         data_root='bkk-urbanscapes-complete',
@@ -198,7 +198,7 @@ workflow = [('train', 1)]
 cudnn_benchmark = True
 optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0005)
 optimizer_config = dict()
-lr_config = dict(policy='poly', power=1.5, min_lr=0.0001, by_epoch=False)
+lr_config = dict(policy='poly', power=1.5, min_lr=0.00001, by_epoch=False)
 runner = dict(type='IterBasedRunner', max_iters=40000)
 checkpoint_config = dict(by_epoch=False, interval=20000)
 evaluation = dict(interval=200, metric='mIoU', pre_eval=True, save_best='mIoU')
