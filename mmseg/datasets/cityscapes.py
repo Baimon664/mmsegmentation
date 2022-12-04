@@ -30,7 +30,7 @@ class CityscapesDataset(CustomDataset):
                [0, 80, 100], [0, 0, 230], [119, 11, 32]]
 
     def __init__(self,
-                 img_suffix='_leftImg8bit.png',
+                 img_suffix='.png',
                  seg_map_suffix='_gtFine_labelTrainIds.png',
                  **kwargs):
         super(CityscapesDataset, self).__init__(
