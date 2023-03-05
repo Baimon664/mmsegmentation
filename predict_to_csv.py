@@ -46,22 +46,20 @@ def get_image_path(root_dir):
 def main():
     args = parse_args()
 
-    # model = init_segmentor(args.config, args.checkpoint, device='cuda:0')
-    # class_def = list(model.CLASSES)
-    # df = pd.DataFrame(columns=["image_id"]+class_def)
+    model = init_segmentor(args.config, args.checkpoint, device='cuda:0')
+    class_def = list(model.CLASSES)
+    df = pd.DataFrame(columns=["image_id"]+class_def)
     image_list = get_image_path(args.path)
-    print(image_list[:10])
-    print(len(image_list))
-    # for i in tqdm(range(len(image_list))):
-    #     img = image_list[i]
-    #     result = inference_segmentor(model, img)
-    #     # image_id = img.split("/")[-1][:-4]
-    #     image_id = img.split(args.path)[-1]
-    #     pred_list = get_class_freq(result[0])
-    #     df.loc[len(df)] = [str(image_id)] + pred_list
-    # if(not os.path.exists("./output")):
-    #     os.mkdir("./output")
-    # df.to_csv(f"./output/result_{args.output}.csv", index=False)
+    for i in tqdm(range(len(image_list))):
+        img = image_list[i]
+        result = inference_segmentor(model, img)
+        # image_id = img.split("/")[-1][:-4]
+        image_id = img.split(args.path)[-1]
+        pred_list = get_class_freq(result[0])
+        df.loc[len(df)] = [str(image_id)] + pred_list
+    if(not os.path.exists("./output")):
+        os.mkdir("./output")
+    df.to_csv(f"./output/result_{args.output}.csv", index=False)
 
 if __name__ == '__main__':
     main()
