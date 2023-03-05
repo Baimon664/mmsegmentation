@@ -39,7 +39,7 @@ def parse_args():
 def get_image_path(root_dir):
     image_list = []
     for root, dirnames, filenames in os.walk(root_dir):
-        for filename in fnmatch.filter(filenames, '*.jpg'):
+        for filename in fnmatch.filter(filenames, '*.JPG'):
             image_list.append(os.path.join(root, filename))
     return image_list
 
