@@ -125,3 +125,4 @@ class_weight.txt
 
 # Pytorch
 *.pth
+output/
