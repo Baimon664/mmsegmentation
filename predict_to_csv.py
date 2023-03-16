@@ -39,7 +39,7 @@ def parse_args():
 def get_image_path(root_dir):
     image_list = []
     for root, dirnames, filenames in os.walk(root_dir):
-        for filename in fnmatch.filter(filenames, '*.jpg'):
+        for filename in fnmatch.filter(filenames, '*.*'):
             image_list.append(os.path.join(root, filename))
     return image_list
 
@@ -52,7 +52,6 @@ def main():
     image_list = get_image_path(args.path)
     for i in tqdm(range(len(image_list))):
         img = image_list[i]
-        print(img)
         result = inference_segmentor(model, img)
         # image_id = img.split("/")[-1][:-4]
         image_id = img.split(args.path)[-1]
