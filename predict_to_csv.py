@@ -51,12 +51,15 @@ def main():
     df = pd.DataFrame(columns=["image_id"]+class_def)
     image_list = get_image_path(args.path)
     for i in tqdm(range(len(image_list))):
-        img = image_list[i]
-        result = inference_segmentor(model, img)
-        # image_id = img.split("/")[-1][:-4]
-        image_id = img.split(args.path)[-1]
-        pred_list = get_class_freq(result[0])
-        df.loc[len(df)] = [str(image_id)] + pred_list
+        try:
+            img = image_list[i]
+            result = inference_segmentor(model, img)
+            # image_id = img.split("/")[-1][:-4]
+            image_id = img.split(args.path)[-1]
+            pred_list = get_class_freq(result[0])
+            df.loc[len(df)] = [str(image_id)] + pred_list
+        except:
+            print("error" + image_list[i])
     if(not os.path.exists("./output")):
         os.mkdir("./output")
     df.to_csv(f"./output/result_{args.output}.csv", index=False)
